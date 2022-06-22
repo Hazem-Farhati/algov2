@@ -1,0 +1,53 @@
+ALGORITHM checkpointV2
+VAR
+tab1 : ARRAY_OF INTEGER[50]; 
+tab2 : ARRAY_OF INTEGER[50]; 
+i : INTEGER; 
+j : INTEGER;
+totale: integer;
+
+BEGIN
+FOR i FROM 0 TO length(tab1)   DO   
+Write("donner t[i]",tab1[i]) 
+read(t[i])
+END_FOR
+
+
+FOR j FROM 0 TO length(tab1)   DO   
+Write("donner t[j]",tab1[j]) 
+read(t[j])
+END_FOR
+
+somme:=0;
+
+FOR i FROM 0 TO length(tab1)   DO   
+j:=0;
+REPEAT
+    j:=j+1;
+UNTIL (t[i] = t[j]);
+END_FOR
+
+IF (j>length(tab2)) then 
+somme:=somme+t[i];
+
+
+END_IF
+
+somme1:=0;
+
+FOR j FROM 0 TO length(tab2)   DO   
+i:=0;
+REPEAT
+    i:=i+1;
+UNTIL (t[i] = t[j]);
+END_FOR
+
+IF (i>length(tab2)) then 
+somme1:=somme1+t[j];
+
+END_IF
+
+totale := somme+somme1;
+
+
+END
